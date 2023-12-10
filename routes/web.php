@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SaleDetailController;
+use App\Models\Supplier;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ use App\Http\Controllers\SaleDetailController;
 */
 
 Route::get('/', function () {
+    #$suppliers = Supplier::all(); // Fetch suppliers data
+    #return view('suppliers/index', compact('suppliers'));
     return view('welcome'); // Assuming you have a welcome.blade.php view for your homepage
 });
 
