@@ -11,7 +11,7 @@ class ClientPhoneController extends Controller
     // Display a listing of the client phones
     public function index()
     {
-        $clientPhones = ClientPhone::with('client')->get();
+        $clientPhones = ClientPhone::with('client')->withTrashed()->get();
         return view('clientPhones.index', compact('clientPhones'));
     }
 

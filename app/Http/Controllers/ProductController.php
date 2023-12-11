@@ -12,7 +12,7 @@ class ProductController extends Controller
     // Display a listing of the products
     public function index()
     {
-        $products = Product::with(['category', 'supplier'])->get();
+        $products = Product::with(['category', 'supplier'])->withTrashed()->get();
         return view('products.index', compact('products'));
     }
 
