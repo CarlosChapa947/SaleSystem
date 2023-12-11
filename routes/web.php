@@ -50,6 +50,6 @@ Route::resource('products', ProductController::class);
 Route::resource('sales', SaleController::class);
 
 // Resource routes for sale details
-Route::resource('salesDetails', SaleDetailController::class);
+Route::resource('saleDetails', SaleDetailController::class);
 
 // You can add more routes here as needed
