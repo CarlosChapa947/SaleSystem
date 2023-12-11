@@ -8,9 +8,6 @@
         @csrf
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required>
-        
-        <label for="rut">RUT:</label>
-        <input type="text" name="rut" id="rut" required>
 
         <button type="submit">Add Client</button>
     </form>
