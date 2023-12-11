@@ -14,6 +14,7 @@ class CreateClientPhonesTable extends Migration
             $table->string('phone');
             $table->foreign('client_id')->references('client_id')->on('clients')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

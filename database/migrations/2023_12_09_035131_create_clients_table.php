@@ -13,6 +13,7 @@ class CreateClientsTable extends Migration
             $table->string('rut')->unique();
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

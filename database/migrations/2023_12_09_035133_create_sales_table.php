@@ -16,6 +16,7 @@ class CreateSalesTable extends Migration
             $table->decimal('final_amount', 10, 2);
             $table->foreign('client_id')->references('client_id')->on('clients');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
