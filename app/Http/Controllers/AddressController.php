@@ -11,7 +11,7 @@ class AddressController extends Controller
     // Display a listing of the addresses
     public function index()
     {
-        $addresses = Address::with('client')->get();
+        $addresses = Address::with('client')->withTrashed()->get();
         return view('addresses.index', compact('addresses'));
     }
 

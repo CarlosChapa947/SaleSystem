@@ -11,7 +11,7 @@ class SaleController extends Controller
     // Display a listing of the sales
     public function index()
     {
-        $sales = Sale::with('client')->get();
+        $sales = Sale::with('client')->withTrashed()->get();
         return view('sales.index', compact('sales'));
     }
 

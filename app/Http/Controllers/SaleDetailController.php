@@ -12,7 +12,7 @@ class SaleDetailController extends Controller
     // Display a listing of the sale details
     public function index()
     {
-        $saleDetails = SaleDetail::with('sale', 'product')->get();
+        $saleDetails = SaleDetail::with('sale', 'product')->withTrashed()->get();
         return view('saleDetails.index', compact('saleDetails'));
     }
 

@@ -10,7 +10,7 @@ class ClientController extends Controller
     // Display a listing of the clients
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::withTrashed()->get();
         return view('clients.index', compact('clients'));
     }
 
@@ -24,9 +24,7 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'rut' => 'required|unique:clients|max:255',
             'name' => 'required|max:255',
-            // Add other necessary validation rules here
         ]);
 
         Client::create($validatedData);
@@ -49,7 +47,6 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
         $validatedData = $request->validate([
-            'rut' => 'required|max:255',
             'name' => 'required|max:255',
             // Add other necessary validation rules here
         ]);

@@ -10,7 +10,7 @@ class CategoryController extends Controller
     // Display a listing of the categories
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::withTrashed()->get();
         return view('categories.index', compact('categories'));
     }
 
