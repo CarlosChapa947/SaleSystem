@@ -8,7 +8,7 @@
     <ul>
         @foreach ($sales as $sale)
             <li>
-                Sale ID: {{ $sale->sale_id }} - Client: {{ $sale->client->name }} - Date: {{ $sale->date->format('Y-m-d') }}
+                Sale ID: {{ $sale->sale_id }} - Client: {{ $sale->client->name }} - Date: {{ (new DateTime($sale->date))->format('Y-m-d') }}
                 <a href="{{ route('sales.show', $sale->sale_id) }}">View</a>
                 <a href="{{ route('sales.edit', $sale->sale_id) }}">Edit</a>
                 <form action="{{ route('sales.destroy', $sale->sale_id) }}" method="POST">

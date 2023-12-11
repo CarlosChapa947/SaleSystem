@@ -5,7 +5,7 @@
 @section('content')
     <h1>Sale Details</h1>
     <p>Client: {{ $sale->client->name }}</p>
-    <p>Date: {{ $sale->date->format('Y-m-d') }}</p>
+    <p>Date: {{ (new DateTime($sale->date))->format('Y-m-d') }}</p>
     <p>Discount: {{ $sale->discount }}</p>
     <p>Final Amount: {{ $sale->final_amount }}</p>
 

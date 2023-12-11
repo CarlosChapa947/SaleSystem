@@ -18,7 +18,7 @@
         </select>
 
         <label for="date">Date:</label>
-        <input type="date" name="date" id="date" value="{{ $sale->date->format('Y-m-d') }}" required>
+        <input type="date" name="date" id="date" value=" {{ (new DateTime($sale->date))->format('m-d-Y') }}" required>
 
         <label for="discount">Discount:</label>
         <input type="number" name="discount" id="discount" value="{{ $sale->discount }}" step="0.01">
